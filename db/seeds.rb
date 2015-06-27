@@ -26,3 +26,9 @@ Video.create!(title: 'Monk',
              small_cover_url: 'monk.jpg',
              large_cover_url: 'monk_large.jpg',
              category: crime)
+             
+6.times {Video.create!(title: 'Family Guy',
+             description: 'In a wacky Rhode Island town, a dysfunctional family strive to cope with everyday life as they are thrown from one crazy scenario to another.',
+             small_cover_url: 'family_guy.jpg',
+             large_cover_url: 'family_guy_large.jpg',
+             category: comedy)}
