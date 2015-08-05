@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '2.1.1'
+ruby '2.1.4'
 
 gem 'bootstrap-sass'
 gem 'bootstrap_form'
@@ -10,7 +10,7 @@ gem 'sass-rails'
 gem 'uglifier'
 gem 'jquery-rails'
 gem 'pg'
-gem 'bcrypt-ruby'
+gem 'bcrypt'
 gem 'fabrication'
 gem 'faker'
 
