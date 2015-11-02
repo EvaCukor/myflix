@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '2.1.4'
+ruby '2.2.2'
 
 gem 'bootstrap-sass'
 gem 'bootstrap_form'
@@ -13,11 +13,13 @@ gem 'pg'
 gem 'bcrypt'
 gem 'fabrication'
 gem 'faker'
+gem 'figaro'
 
 group :development do
   gem 'thin'
   gem "better_errors"
   gem "binding_of_caller"
+  gem "letter_opener"
 end
 
 group :development, :test do

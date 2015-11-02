@@ -15,8 +15,8 @@ describe Category do
   #   expect(comedies.videos).to eq([futurama, south_park])
   #end
   
-  it { should have_many(:videos) }
-  it { should validate_presence_of(:name) }
+  it { is_expected.to have_many(:videos) }
+  it { is_expected.to validate_presence_of(:name) }
   
   describe "#recent_videos" do
     it "returns the videos in the reverse chronical order by created_at" do

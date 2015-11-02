@@ -25,10 +25,10 @@ describe Video do
   #   expect(Video.count).to eq(0)
   # end
   
-  it { should belong_to(:category) }
-  it { should validate_presence_of(:title) }
-  it { should validate_presence_of(:description) }
-  it { should have_many(:reviews).order("created_at DESC") }
+  it { is_expected.to belong_to(:category) }
+  it { is_expected.to validate_presence_of(:title) }
+  it { is_expected.to validate_presence_of(:description) }
+  it { is_expected.to have_many(:reviews).order("created_at DESC") }
   
   describe "search_by_title" do
     it "returns an empty array if there is no match" do

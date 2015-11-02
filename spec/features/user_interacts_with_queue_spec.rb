@@ -13,7 +13,7 @@ feature 'user interacts with the queue' do
     add_video_to_queue(monk)
     
     visit video_path(monk)
-    page.should_not have_content('+ My Queue')
+    expect(page).not_to have_content('+ My Queue')
     
     add_video_to_queue(south_park)
     add_video_to_queue(futurama)
@@ -40,7 +40,7 @@ end
 
 def add_video_to_queue(video)
   visit home_path
-  find("a[href='/videos/#{video.id}']").click
+  click_on_video_on_home_page(video)
   expect(page).to have_content(video.title)
   click_link '+ My Queue'
 end
