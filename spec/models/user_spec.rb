@@ -10,6 +10,11 @@ describe User do
   it { is_expected.to have_many(:following_relationships).class_name("Relationship") }
   it { is_expected.to have_many(:leading_relationships).class_name("Relationship") }
   
+  it "generates a random token when a user is created" do
+    alice = Fabricate(:user)
+    expect(alice.token).to be_present
+  end
+  
   describe "#queued_video?" do
     it "returns true if the user queued the video" do
       user = Fabricate(:user)

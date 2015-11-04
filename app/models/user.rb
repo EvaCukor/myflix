@@ -31,10 +31,6 @@ class User < ActiveRecord::Base
     !(self.follows?(another_user) || self == another_user)
   end
   
-  def to_param
-    token
-  end
-  
   def generate_token
     self.token = SecureRandom.urlsafe_base64
   end

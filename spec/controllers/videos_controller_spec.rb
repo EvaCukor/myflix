@@ -5,7 +5,7 @@ describe VideosController do
     it "sets @video for authenticated users" do
       session[:user_id] = Fabricate(:user).id
       video = Fabricate(:video)
-      get :show, id: video.id
+      get :show, id: video.token
       expect(assigns(:video)).to eq(video)
     end
     # it "renders the show template" do
@@ -19,7 +19,7 @@ describe VideosController do
       video = Fabricate(:video)
       review1 = Fabricate(:review, video: video)
       review2 = Fabricate(:review, video: video)
-      get :show, id: video.id
+      get :show, id: video.token
       expect(assigns(:reviews)).to match_array([review1, review2])
       #assigns(:reviews).should =~ [review1, review2]
     end
