@@ -10,12 +10,15 @@ describe UsersController do
   
   describe "POST create" do
     context "with valid input" do
-      before {post :create, user: Fabricate.attributes_for(:user)}
+      before { post :create, user: {email: "joe@example.com", password: "password", full_name: "Joe Smith"} }
       it "creates the user" do
         expect(User.count).to eq(1)
       end
       it "redirects to the signin page" do
         expect(response).to redirect_to sign_in_path
+      end
+      it "sends out a welcome email to the user's email address" do
+        expect(ActionMailer::Base.deliveries.last.to).to eq(["joe@example.com"]) 
       end
     end
     context "with invalid input" do
